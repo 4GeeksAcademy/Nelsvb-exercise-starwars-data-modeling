@@ -56,9 +56,9 @@ class Planet(Base):
 class Favorites(Base):
     __tablename__ = 'favorites'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('use.id'))
-    character_id = Column(Integer, ForeignKey('use.id'))
-    planet_id= Column(Integer, ForeignKey('use.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
+    character_id = Column(Integer, ForeignKey('character.id'))
+    planet_id= Column(Integer, ForeignKey('planet.id'))
 
     user = relationship(User)
     character = relationship(Character)
